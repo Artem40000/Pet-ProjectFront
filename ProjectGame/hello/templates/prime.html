@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <style>
+        html{
+            height: 100%
+        }
+
+        body{
+            background: #252324;
+            color: Snow;
+        }
+
+        .ContainerColorTheme{
+            position: relative;
+            display: flex;
+            width: 350px;
+            height: 800px;
+            background: rgb(50, 50, 50);
+            box-shadow: 0px 0px 10px Snow;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .TextStyleColorTheme{
+            font-size: 30px;
+            font-family: Arial Black;
+            margin-left: 55px;
+        }
+
+        .ContainerColorTheme > h1{
+            position: absolute;
+            width: 350px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        .ColorOne{
+            margin-top: 100px;
+            background: rgb(100, 100, 100);
+        }
+
+        .ColorTwo{
+            margin-top: 150px;
+            background: #ff4186;
+        }
+
+        .ColorThree{
+            margin-top: 200px;
+            background: #c60040;
+        }
+
+        .ColorFour{
+            margin-top: 250px;
+            background: #bf4ad3;
+        }
+
+        .ColorFive{
+            margin-top: 300px;
+            background: #79048d;
+        }
+
+        .ColorSix{
+            margin-top: 350px;
+            background: #8a5dda;
+        }
+
+        .ColorSeven{
+            margin-top: 400px;
+            background: #441794;
+        }
+
+        .ColorEight{
+            margin-top: 450px;
+            background: #6274d8;
+        }
+
+        .ColorNine{
+            margin-top: 500px;
+            background: #44b9ff;
+        }
+
+        .ColorTen{
+            margin-top: 550px;
+            background: #26ccff;
+        }
+
+        .ColorEleven{
+            margin-top: 600px;
+            background: #23dff8;
+        }
+
+        .ColorTwelve{
+            margin-top: 650px;
+            background: #23b9ab;
+        }
+
+        .ColorThirteen{
+            margin-top: 700px;
+            background: #aee66d;
+        }
+
+        .ColorFourteen{
+            margin-top: 750px;
+            background: #fae636;
+        }
+
+        .LineSelectColor{
+            position: absolute;
+            background: Gray;
+            width: 50px;
+            height: 700px;
+            margin-left: 300px;
+            margin-top: 100px;
+        }
+
+        .ContainerTheme{
+            position: absolute;
+            display: flex;
+            width: 500px;
+            height: 500px;
+            background: rgb(50, 50, 50);
+            box-shadow: 0px 0px 10px Snow;
+            cursor: pointer;
+            margin-left: 1300px;
+            margin-top: -800px;
+            border-radius: 75px;
+        }
+
+        .Moon{
+            position: absolute;
+            transform: translate(-50%, -50%);
+            height: 250px;
+            width: 250px;
+            margin-left: 275px;
+            margin-top: 225px;
+            box-shadow: -25px 10px 0 10px Snow;
+            border-radius: 50%;
+        }
+
+        .Sun{
+            position: absolute;
+            background: rgb(75, 75, 75);
+            transform: translate(-50%, -50%);
+            height: 225px;
+            width: 225px;
+            margin-left: 250px;
+            margin-top: 250px;
+            border-radius: 50%;
+            display: none;
+        }
+
+        @keyframes Color{
+            10%{
+                width: 345px;
+            }
+            20%{
+                width: 340px;
+            }
+            40%{
+                width: 330px;
+            }
+            60%{
+                width: 320px;
+            }
+            80%{
+                width: 310px;
+            }
+            100%{
+                width: 300px;
+            }
+        }
+
+        @keyframes Theme{
+            100%{
+                background: Snow;
+                box-shadow: 0px 0px 20px Gray;
+            }
+        }
+
+        @keyframes ThemeBlack{
+            100%{
+                background: rgb(50, 50, 50);
+                box-shadow: 0px 0px 10px Snow;
+            }
+        }
+
+        .ColorOne.animate,
+        .ColorTwo.animate,
+        .ColorThree.animate,
+        .ColorFour.animate,
+        .ColorFive.animate,
+        .ColorSix.animate,
+        .ColorSeven.animate,
+        .ColorEight.animate,
+        .ColorNine.animate,
+        .ColorTen.animate,
+        .ColorEleven.animate,
+        .ColorTwelve.animate,
+        .ColorThirteen.animate,
+        .ColorFourteen.animate{
+            animation: Color 0.3s forwards;
+        }
+
+        .ContainerTheme.animate{
+            animation: Theme 0.3s forwards;
+        }
+
+        .ContainerTheme.animateBlack{
+            animation: ThemeBlack 0.3s forwards;
+        }
+
+        .LineOne{
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            background: rgb(75, 75, 75);
+            border-radius: 25px;
+            margin-left: 25px;
+            margin-top: 225px;
+            display: none;
+        }
+
+        .LineTwo{
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            background: rgb(75, 75, 75);
+            border-radius: 25px;
+            display: none;
+            margin-top:35px;
+            margin-left:200px;
+            rotate:90deg;
+        }
+
+        .LineThree{
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            background: rgb(75, 75, 75);
+            border-radius: 25px;
+            margin-top:400px;
+            margin-left:200px;
+            rotate:90deg;
+            display: none;
+        }
+
+        .LineFour{
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            background: rgb(75, 75, 75);
+            border-radius: 25px;
+            margin-top: 225px;
+            margin-left:390px;
+            display: none;
+        }
+
+        .LineFive{
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            background: rgb(75, 75, 75);
+            border-radius: 25px;
+            margin-top:100px;
+            margin-left:75px;
+            rotate:45deg;
+            display: none;
+        }
+
+        .LineSix{
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            background: rgb(75, 75, 75);
+            border-radius: 25px;
+            margin-top:350px;
+            margin-left:75px;
+            rotate:-45deg;
+            display: none;
+        }
+
+        .LineSeven{
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            background: rgb(75, 75, 75);
+            border-radius: 25px;
+            margin-top:100px;
+            margin-left:325px;
+            rotate:-45deg;
+            display: none;
+        }
+
+        .LineEight{
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            background: rgb(75, 75, 75);
+            border-radius: 25px;
+            margin-top:350px;
+            margin-left:325px;
+            rotate:45deg;
+            display: none;
+        }
+
+        .ContainerElement{
+            position: absolute;
+            display: flex;
+            width: 800px;
+            height: 800px;
+            background: rgb(50, 50, 50);
+            box-shadow: 0px 0px 10px Snow;
+            margin-left: 400px;
+            margin-top: -800px;
+            border-radius: 75px;
+        }
+
+        .ContainerElement > h2{
+            position: absolute;
+            display: flex;
+            width: 500px;
+            height: 500px;
+            background: rgb(50, 50, 50);
+            box-shadow: 0px 0px 10px #c1c1c1;
+            border-radius: 50px;
+            margin-top: 150px;
+            margin-left: 150px;
+            animation: OneElements 3s ease infinite;
+        }
+
+        .ElementOne{
+            rotate: 30deg;
+        }
+
+        .ElementTwo{
+            rotate: 45deg;
+        }
+
+        .ElementThree{
+            rotate: 60deg;
+        }
+
+        .ElementFour{
+            rotate: 75deg;
+        }
+
+        .ElementFive{
+            rotate: 90deg;
+        }
+
+        .ElementSix{
+            rotate: 105deg;
+        }
+
+        .ElementSeven{
+            rotate: 120deg;
+        }
+
+        .ElementEight{
+            rotate: 135deg;
+        }
+
+        .ElementNine{
+            rotate: 150deg;
+        }
+
+        .ElementTen{
+            rotate: 165deg;
+        }
+
+        .ElementEleven{
+            rotate: 180deg;
+        }
+
+        .ElementTwelve{
+            rotate: 195deg;
+        }
+
+        .ElementThirteen{
+            rotate: 210deg;
+        }
+
+        .ElementFourteen{
+            rotate: 225deg;
+            animation: Rotates 2s ease infinite;
+        }
+
+        @keyframes OneElements{
+            0%{
+                box-shadow: 0px 0px 10px #c1c1c1;
+            }
+            10%{
+                box-shadow: 0px 0px 15px #23dff8;
+            }
+            20%{
+                box-shadow: 0px 0px 20px #26ccff;
+            }
+            30%{
+                box-shadow: 0px 0px 25px #44b9ff;
+            }
+            40%{
+                box-shadow: 0px 0px 30px #6274d8;
+            }
+            50%{
+                box-shadow: 0px 0px 35px #bf4ad3;
+            }
+            60%{
+                box-shadow: 0px 0px 30px #6274d8;
+            }
+            70%{
+                box-shadow: 0px 0px 25px #23dff8;
+            }
+            80%{
+                box-shadow: 0px 0px 20px #44b9ff;
+            }
+            90%{
+                box-shadow: 0px 0px 15px #26ccff;
+            }
+            100%{
+                box-shadow: 0px 0px 10px #c1c1c1;
+            }
+        }
+
+
+        @keyframes TwoElements{
+            0%{
+                box-shadow: 0px 0px 10px #f0ff5c;
+            }
+            10%{
+                box-shadow: 0px 0px 15px #aab916;
+            }
+            20%{
+                box-shadow: 0px 0px 20px #68a027;
+            }
+            30%{
+                box-shadow: 0px 0px 25px #aee66d;
+            }
+            40%{
+                box-shadow: 0px 0px 30px #6fd273;
+            }
+            50%{
+                box-shadow: 0px 0px 35px #23b9ab;
+            }
+            60%{
+                box-shadow: 0px 0px 30px #6fd273;
+            }
+            70%{
+                box-shadow: 0px 0px 25px #aee66d;
+            }
+            80%{
+                box-shadow: 0px 0px 20px #68a027;
+            }
+            90%{
+                box-shadow: 0px 0px 15px #aab916;
+            }
+            100%{
+                box-shadow: 0px 0px 10px #f0ff5c;
+            }
+        }
+
+
+        @keyframes ThreeElements{
+            0%{
+                box-shadow: 0px 0px 10px #79048d;
+            }
+            10%{
+                box-shadow: 0px 0px 15px #c60040;
+            }
+            20%{
+                box-shadow: 0px 0px 20px #ff4186;
+            }
+            30%{
+                box-shadow: 0px 0px 25px #d12013;
+            }
+            40%{
+                box-shadow: 0px 0px 30px #ff7a45;
+            }
+            50%{
+                box-shadow: 0px 0px 35px #ffff5e;
+            }
+            60%{
+                box-shadow: 0px 0px 30px #ff7a45;
+            }
+            70%{
+                box-shadow: 0px 0px 25px #d12013;
+            }
+            80%{
+                box-shadow: 0px 0px 20px #ff4186;
+            }
+            90%{
+                box-shadow: 0px 0px 15px #c60040;
+            }
+            100%{
+                box-shadow: 0px 0px 10px #79048d;
+            }
+        }
+
+        .ContainerElement.OneAnimate > h2{
+            animation: OneElements 3s ease infinite;
+        }
+
+        .ContainerElement.TwoAnimate > h2{
+            animation: TwoElements 3s ease infinite;
+        }
+
+        .ContainerElement.ThreeAnimate > h2{
+            animation: ThreeElements 3s ease infinite;
+        }
+
+        .ContainerColorsElement{
+            position: absolute;
+            display: flex;
+            width: 500px;
+            height: 275px;
+            background: rgb(50, 50, 50);
+            box-shadow: 0px 0px 10px Snow;
+            margin-left: 1300px;
+            margin-top: -275px;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .TextStyleColorsElement{
+            font-size: 30px;
+            font-family: Arial Black;
+            margin-left: 80px;
+        }
+
+        .ContainerColorsElement > h2{
+            position: absolute;
+            width: 500px;
+            height: 65px;
+            cursor: pointer;
+            font-size: 40px;
+        }
+
+        .ColorOneElement{
+            background: #1c2e92;
+            margin-top: 80px;
+        }
+
+        .ColorTwoElement{
+            background: #81b940;
+            margin-top: 145px;
+        }
+
+        .ColorThreeElement{
+            background: #d12013;
+            margin-top: 210px;
+        }
+
+        .LineSelectColorsElement{
+            position: absolute;
+            background: Gray;
+            width: 50px;
+            height: 195px;
+            margin-left: 450px;
+            margin-top: 80px;
+        }
+
+        @keyframes ColorElement{
+            10%{
+                width: 500px;
+            }
+            20%{
+                width: 490px;
+            }
+            40%{
+                width: 480px;
+            }
+            60%{
+                width: 470px;
+            }
+            80%{
+                width: 460px;
+            }
+            100%{
+                width: 450px;
+            }
+        }
+
+        .ColorOneElement.animate,
+        .ColorTwoElement.animate,
+        .ColorThreeElement.animate{
+            animation: ColorElement 0.3s forwards;
+        }
+    </style>
+</head>
+<body>
+<div class="ContainerColorTheme">
+    <h2 class="TextStyleColorTheme">Цветная Тема</h2>
+    <h2 class="LineSelectColor"></h2>
+    <h1 class="ColorOne">Стандартная</h1>
+    <h1 class="ColorTwo">#ff4186</h1>
+    <h1 class="ColorThree">#c60040</h1>
+    <h1 class="ColorFour">#bf4ad3</h1>
+    <h1 class="ColorFive">#79048d</h1>
+    <h1 class="ColorSix">#8a5dda</h1>
+    <h1 class="ColorSeven">#441794</h1>
+    <h1 class="ColorEight">#6274d8</h1>
+    <h1 class="ColorNine">#44b9ff</h1>
+    <h1 class="ColorTen">#26ccff</h1>
+    <h1 class="ColorEleven">#23dff8</h1>
+    <h1 class="ColorTwelve">#23b9ab</h1>
+    <h1 class="ColorThirteen">#aee66d</h1>
+    <h1 class="ColorFourteen">#fae636</h1>
+</div>
+<div class="ContainerTheme">
+    <h2 class="Moon"></h2>
+    <h2 class="Sun"></h2>
+    <h2 class="LineOne"></h2>
+    <h2 class="LineTwo"></h2>
+    <h2 class="LineThree"></h2>
+    <h2 class="LineFour"></h2>
+    <h2 class="LineFive"></h2>
+    <h2 class="LineSix"></h2>
+    <h2 class="LineSeven"></h2>
+    <h2 class="LineEight"></h2>
+</div>
+<div class="ContainerElement">
+    <h2 class="ElementOne"></h2>
+    <h2 class="ElementTwo"></h2>
+    <h2 class="ElementThree"></h2>
+    <h2 class="ElementFour"></h2>
+    <h2 class="ElementFive"></h2>
+    <h2 class="ElementSix"></h2>
+    <h2 class="ElementSeven"></h2>
+    <h2 class="ElementEight"></h2>
+    <h2 class="ElementNine"></h2>
+    <h2 class="ElementTen"></h2>
+    <h2 class="ElementEleven"></h2>
+    <h2 class="ElementTwelve"></h2>
+    <h2 class="ElementThirteen"></h2>
+    <h2 class="ElementFourteen"></h2>
+</div>
+<div class="ContainerColorsElement">
+    <h1 class="LineSelectColorsElement"></h1>
+    <h1 class="TextStyleColorsElement">Цвета для Элемента</h1>
+    <h2 class="ColorOneElement">Blue</h2>
+    <h2 class="ColorTwoElement">Green</h2>
+    <h2 class="ColorThreeElement">Red</h2>
+</div>
+<script>
+const ColorAll = document.querySelectorAll('.ColorOne, .ColorTwo, .ColorThree, .ColorFour, .ColorFive, .ColorSix, .ColorSeven, .ColorEight, .ColorNine, .ColorTen, .ColorEleven, .ColorTwelve, .ColorThirteen, .ColorFourteen');
+const ContainerTheme = document.querySelector('.ContainerTheme');
+const ContainerColorTheme = document.querySelectorAll('.ContainerColorTheme, .TextStyleColorTheme');
+const LightThemeS = document.querySelectorAll('.Sun, .LineOne, .LineTwo, .LineThree, .LineFour, .LineFive, .LineSix, .LineSeven, .LineEight')
+const ColorsElement = document.querySelectorAll('.ColorOneElement, .ColorTwoElement, .ColorThreeElement')
+const body = document.querySelector('body')
+const ContainerElement = document.querySelector('.ContainerElement')
+const ContainerColorsElement = document.querySelectorAll('.ContainerColorsElement, .TextStyleColorsElement')
+let isClicked = false;
+let Display = 'block';
+let Color = '';
+
+
+ColorAll[0].classList.add('animate');
+ColorsElement[0].classList.add('animate');
+function SelectColor() {
+    ColorAll[0].classList.remove('animate');
+    ColorAll[1].classList.remove('animate');
+    ColorAll[2].classList.remove('animate');
+    ColorAll[3].classList.remove('animate');
+    ColorAll[4].classList.remove('animate');
+    ColorAll[5].classList.remove('animate');
+    ColorAll[6].classList.remove('animate');
+    ColorAll[7].classList.remove('animate');
+    ColorAll[8].classList.remove('animate');
+    ColorAll[9].classList.remove('animate');
+    ColorAll[10].classList.remove('animate');
+    ColorAll[11].classList.remove('animate');
+    ColorAll[12].classList.remove('animate');
+    ColorAll[13].classList.remove('animate');
+    ColorsElement[0].classList.remove('animate');
+    ColorsElement[1].classList.remove('animate');
+    ColorsElement[2].classList.remove('animate');
+}
+
+function LightThemeShow() {
+    LightThemeS[0].style.display = Display;
+    LightThemeS[1].style.display = Display;
+    LightThemeS[2].style.display = Display;
+    LightThemeS[3].style.display = Display;
+    LightThemeS[4].style.display = Display;
+    LightThemeS[5].style.display = Display;
+    LightThemeS[6].style.display = Display;
+    LightThemeS[7].style.display = Display;
+    LightThemeS[8].style.display = Display;
+}
+
+function SelectOneColor() {
+    body.style.backgroundColor = Color;
+}
+
+function DefaultTheme() {
+    ColorAll[0].classList.add('animate');
+    ContainerTheme.classList.remove('animate');
+    ContainerTheme.classList.add('animateBlack');
+    ContainerColorTheme[0].style.backgroundColor = 'rgb(50, 50, 50)';
+    ContainerColorTheme[1].style.color = 'Snow';
+    ContainerColorTheme[0].style.boxShadow = '0px 0px 10px Snow';
+    ContainerColorsElement[0].style.boxShadow = '0px 0px 10px Snow';
+    ContainerColorsElement[0].style.boxShadow = '0px 0px 10px Snow';
+    ContainerColorsElement[0].style.backgroundColor = 'rgb(50, 50, 50)';
+    ContainerColorsElement[1].style.color = 'Snow';
+    ContainerElement.style.boxShadow = '0px 0px 10px Snow';
+    ContainerElement.style.backgroundColor = 'rgb(50, 50, 50)';
+}
+
+
+ContainerTheme.addEventListener('click', function() {
+    if (!isClicked){
+        SelectColor();
+        ColorAll[0].classList.add('animate');
+        ContainerTheme.classList.remove('animateBlack');
+        ContainerTheme.classList.add('animate');
+        ContainerColorTheme[0].style.backgroundColor = 'Snow';
+        ContainerColorTheme[1].style.color = 'Black';
+        ContainerColorTheme[0].style.boxShadow = '0px 0px 20px Black';
+        ContainerColorsElement[0].style.boxShadow = '0px 0px 20px Black';
+        ContainerColorsElement[0].style.backgroundColor = 'Snow';
+        ContainerColorsElement[1].style.color = 'Black';
+        ContainerElement.style.boxShadow = '0px 0px 20px Black';
+        ContainerElement.style.backgroundColor = 'Snow';
+        body.style.backgroundColor = 'Snow';
+        Display = 'block';
+        LightThemeShow();
+        isClicked = true;}
+    else {
+        SelectColor();
+        ColorAll[0].classList.add('animate');
+        ContainerTheme.classList.remove('animate');
+        ContainerTheme.classList.add('animateBlack');
+        ContainerColorTheme[0].style.backgroundColor = 'rgb(50, 50, 50)';
+        ContainerColorTheme[1].style.color = 'Snow';
+        ContainerColorTheme[0].style.boxShadow = '0px 0px 10px Snow';
+        ContainerColorsElement[0].style.boxShadow = '0px 0px 10px Snow';
+        ContainerColorsElement[0].style.boxShadow = '0px 0px 10px Snow';
+        ContainerColorsElement[0].style.backgroundColor = 'rgb(50, 50, 50)';
+        ContainerColorsElement[1].style.color = 'Snow';
+        ContainerElement.style.boxShadow = '0px 0px 10px Snow';
+        ContainerElement.style.backgroundColor = 'rgb(50, 50, 50)';
+        body.style.backgroundColor = '#252324';
+        Display = 'none';
+        LightThemeShow();
+        isClicked = false;}
+});
+
+
+ColorsElement[0].addEventListener('click', function() {
+    ContainerElement.classList.remove('TwoAnimate');
+    ContainerElement.classList.remove('ThreeAnimate');
+    ContainerElement.classList.add('OneAnimate');
+});
+
+ColorsElement[1].addEventListener('click', function() {
+    ContainerElement.classList.remove('OneAnimate');
+    ContainerElement.classList.remove('ThreeAnimate');
+    ContainerElement.classList.add('TwoAnimate');
+});
+
+ColorsElement[2].addEventListener('click', function() {
+    ContainerElement.classList.remove('OneAnimate');
+    ContainerElement.classList.remove('TwoAnimate');
+    ContainerElement.classList.add('ThreeAnimate');
+});
+
+
+ColorAll[0].addEventListener('click', function() {
+    Display = 'none';
+    ContainerTheme.style.display = 'block';
+    LightThemeShow();
+    DefaultTheme();
+    Color = '#252324';
+    SelectColor();
+    SelectOneColor();
+    ColorAll[0].classList.add('animate');
+    setTimeout(() => {
+        ColorAll[0].style.animation = '';
+    }, 500);
+});
+
+ColorAll[1].addEventListener('click', function() {
+    ContainerTheme.style.display = 'none';
+    DefaultTheme();
+    Color = '#ff4186'
+    SelectColor();
+    SelectOneColor();
+    ColorAll[1].classList.add('animate');
+    setTimeout(() => {
+        ColorAll[1].style.animation = '';
+    }, 500);
+})
+
+ColorAll[2].addEventListener('click', function() {
+    ContainerTheme.style.display = 'none';
+    DefaultTheme();
+    Color = '#c60040';
+    SelectColor();
+    SelectOneColor();
+    ColorAll[2].classList.add('animate');
+    setTimeout(() => {
+        ColorAll[2].style.animation = '';
+    }, 500);
+});
+
+ColorAll[3].addEventListener('click', function() {
+    ContainerTheme.style.display = 'none';
+    DefaultTheme();
+    Color = '#bf4ad3';
+    SelectColor();
+    SelectOneColor();
+    ColorAll[3].classList.add('animate');
+    setTimeout(() => {
+        ColorAll[3].style.animation = '';
+    }, 500);
+})
+
+ColorAll[4].addEventListener('click', function() {
+    ContainerTheme.style.display = 'none';
+    DefaultTheme();
+    Color = '#79048d';
+    SelectColor();
+    SelectOneColor();
+    ColorAll[4].classList.add('animate');
+    setTimeout(() => {
+        ColorAll[4].style.animation = '';
+    }, 500);
+});
+
+ColorAll[5].addEventListener('click', function() {
+    ContainerTheme.style.display = 'none';
+    DefaultTheme();
+    Color = '#8a5dda';
+    SelectColor();
+    SelectOneColor();
+    ColorAll[5].classList.add('animate');
+    setTimeout(() => {
+        ColorAll[5].style.animation = '';
+    }, 500);
+})
+
+ColorAll[6].addEventListener('click', function() {
+    ContainerTheme.style.display = 'none';
+    DefaultTheme();
+    Color = '#441794';
+    SelectColor();
+    SelectOneColor();
+    ColorAll[6].classList.add('animate');
+    setTimeout(() => {
+        ColorAll[6].style.animation = '';
+    }, 500);
+});
+
+ColorAll[7].addEventListener('click', function() {
+    ContainerTheme.style.display = 'none';
+    DefaultTheme();
+    Color = '#6274d8';
+    SelectColor();
+    SelectOneColor();
+    ColorAll[7].classList.add('animate');
+    setTimeout(() => {
+        ColorAll[7].style.animation = '';
+    }, 500);
+})
+
+ColorAll[8].addEventListener('click', function() {
+    ContainerTheme.style.display = 'none';
+    DefaultTheme();
+    Color = '#44b9ff';
+    SelectColor();
+    SelectOneColor();
+    ColorAll[8].classList.add('animate');
+    setTimeout(() => {
+        ColorAll[8].style.animation = '';
+    }, 500);
+});
+
+ColorAll[9].addEventListener('click', function() {
+    ContainerTheme.style.display = 'none';
+    DefaultTheme();
+    Color = '#26ccff';
+    SelectColor();
+    SelectOneColor();
+    ColorAll[9].classList.add('animate');
+    setTimeout(() => {
+        ColorAll[9].style.animation = '';
+    }, 500);
+})
+
+ColorAll[10].addEventListener('click', function() {
+    ContainerTheme.style.display = 'none';
+    DefaultTheme();
+    Color = '#23dff8'
+    SelectColor();
+    SelectOneColor();
+    ColorAll[10].classList.add('animate');
+    setTimeout(() => {
+        ColorAll[10].style.animation = '';
+    }, 500);
+});
+
+ColorAll[11].addEventListener('click', function() {
+    ContainerTheme.style.display = 'none';
+    DefaultTheme();
+    Color = '#23b9ab';
+    SelectColor();
+    SelectOneColor();
+    ColorAll[11].classList.add('animate');
+    setTimeout(() => {
+        ColorAll[11].style.animation = '';
+    }, 500);
+})
+
+ColorAll[12].addEventListener('click', function() {
+    ContainerTheme.style.display = 'none';
+    DefaultTheme();
+    Color = '#aee66d';
+    SelectColor();
+    SelectOneColor();
+    ColorAll[12].classList.add('animate');
+    setTimeout(() => {
+        ColorAll[12].style.animation = '';
+    }, 500);
+});
+
+ColorAll[13].addEventListener('click', function() {
+    ContainerTheme.style.display = 'none';
+    DefaultTheme();
+    Color = '#fae636';
+    SelectColor();
+    SelectOneColor();
+    ColorAll[13].classList.add('animate');
+    setTimeout(() => {
+        ColorAll[13].style.animation = '';
+    }, 500);
+});
+
+ColorsElement[0].addEventListener('click', function() {
+    SelectColor();
+    SelectOneColor();
+    ColorsElement[0].classList.add('animate');
+    setTimeout(() => {
+        ColorsElement[0].style.animation = '';
+    }, 500);
+});
+
+ColorsElement[1].addEventListener('click', function() {
+    SelectColor();
+    SelectOneColor();
+    ColorsElement[1].classList.add('animate');
+    setTimeout(() => {
+        ColorsElement[1].style.animation = '';
+    }, 500);
+});
+
+ColorsElement[2].addEventListener('click', function() {
+    SelectColor();
+    SelectOneColor();
+    ColorsElement[2].classList.add('animate');
+    setTimeout(() => {
+        ColorsElement[2].style.animation = '';
+    }, 500);
+});
+</script>
+</body>
+</html>
