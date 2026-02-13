@@ -1,0 +1,11 @@
+services:
+  django:
+    build: .
+    container_name: ProjectFront
+    command: python manage.py runserver 0.0.0.0:8000
+
+    volumes:
+      - .:/ProjectFront
+
+    ports:
+      - "8000:8000"

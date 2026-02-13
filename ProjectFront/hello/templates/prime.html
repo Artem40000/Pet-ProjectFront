@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <style>
+    body{
+        background: rgb(25, 25, 25);
+    }
+
+        .ContainerOne{
+            width: 600px;
+            height: 600px;
+            background: rgb(225, 225, 225);
+            display: flex;
+            border-radius: 15px;
+            border: 0 solid;
+            box-shadow: 0px 0px 10px 2px #26ccff;
+        }
+
+        .ContainerOne > h2{
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgb(35, 35, 35);
+            border: 0 solid;
+            border-radius: 5px;
+            margin-left: 100px;
+            margin-top: 100px;
+            box-shadow: 0px 0px 5px 2px #6274d8;
+        }
+
+        .OneElementOne{
+            rotate: 15deg;
+        }
+        .OneElementTwo{
+            rotate: 30deg;
+        }
+        .OneElementThree{
+            rotate: 45deg;
+        }
+        .OneElementFour{
+            rotate: 60deg;
+        }
+        .OneElementFive{
+            rotate: 75deg;
+        }
+        .OneElementSix{
+            rotate: 90deg;
+        }
+        .OneElementSeven{
+            rotate: 105deg;
+        }
+        .OneElementEight{
+            rotate: 120deg;
+        }
+        .OneElementEight{
+            rotate: 135deg;
+        }
+
+
+
+
+
+        .ContainerTwo{
+            margin: auto;
+            margin-top: -600px;
+            width: 600px;
+            height: 600px;
+            background: rgb(225, 225, 225);
+            display: flex;
+            border-radius: 15px;
+            border: 0 solid;
+            box-shadow: 0px 0px 10px 2px #26ccff;
+        }
+
+        .ContainerTwo > h2{
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgb(35, 35, 35);
+            border: 0 solid;
+            border-radius: 5px;
+            margin-left: 100px;
+            margin-top: 100px;
+            box-shadow: 0px 0px 5px 2px Lime;
+        }
+
+        .TwoElementOne{
+            rotate: 15deg;
+        }
+        .TwoElementTwo{
+            rotate: 25deg;
+        }
+        .TwoElementThree{
+            rotate: 35deg;
+        }
+        .TwoElementFour{
+            rotate: 45deg;
+        }
+        .TwoElementFive{
+            rotate: 55deg;
+        }
+        .TwoElementSix{
+            rotate: 65deg;
+        }
+        .TwoElementSeven{
+            rotate: 75deg;
+        }
+
+
+
+
+
+        .ContainerThree{
+            margin-left: auto;
+            margin-top: -600px;
+            width: 600px;
+            height: 600px;
+            background: rgb(225, 225, 225);
+            display: flex;
+            border-radius: 15px;
+            border: 0 solid;
+            box-shadow: 0px 0px 10px 2px #26ccff;
+        }
+
+        .ContainerThree > h2{
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgb(35, 35, 35);
+            border: 0 solid;
+            border-radius: 20px;
+            margin-left: 100px;
+            margin-top: 100px;
+            box-shadow: 0px 0px 5px 2px Red;
+        }
+
+        .ThreeElementOne{
+            rotate: 0deg;
+        }
+        .ThreeElementTwo{
+            rotate: 10deg;
+        }
+        .ThreeElementThree{
+            rotate: 20deg;
+        }
+        .ThreeElementFour{
+            rotate: 30deg;
+        }
+        .ThreeElementFive{
+            rotate: -10deg;
+        }
+        .ThreeElementSix{
+            rotate: -20deg;
+        }
+        .ThreeElementSeven{
+            rotate: -30deg;
+        }
+
+
+
+
+
+        @keyframes ElementOne{
+            0%{
+                box-shadow: 0px 0px 5px 2px #4e60c4;
+            }
+            12,5%{
+                box-shadow: 0px 0px 5px 5px #1c2e92;
+            }
+            25%{
+                box-shadow: 0px 0px 5px 10px #6274d8;
+            }
+            37,5%{
+                box-shadow: 0px 0px 5px 15px #23dff8;
+            }
+            50%{
+                box-shadow: 0px 0px 5px 5px #26ccff;
+            }
+            62,5%{
+                box-shadow: 0px 0px 5px 15px #23dff8;
+            }
+            75,5%{
+                box-shadow: 0px 0px 5px 10px #6274d8;
+            }
+            87,5%{
+                box-shadow: 0px 0px 5px 5px #1c2e92;
+            }
+            100%{
+                box-shadow: 0px 0px 5px 2px #4e60c4;
+            }
+        }
+
+
+
+        @keyframes ElementTwo{
+            0%{
+                box-shadow: 0px 0px 5px 2px #007365;
+            }
+            20%{
+                box-shadow: 0px 0px 5px 5px #4caf50;
+            }
+            35%{
+                box-shadow: 0px 0px 5px 7px #aee66d;
+            }
+            50%{
+                box-shadow: 0px 0px 5px 10px #cddc39;
+            }
+            65%{
+                box-shadow: 0px 0px 5px 7px #aee66d;
+            }
+            80%{
+                box-shadow: 0px 0px 5px 5px #4caf50;
+            }
+            100%{
+                box-shadow: 0px 0px 5px 2px #007365;
+            }
+        }
+
+
+
+        @keyframes ElementThree{
+            0%{
+                box-shadow: 0px 0px 5px 3px Red;
+            }
+            20%{
+                box-shadow: 0px 0px 5px 6px #ff5722;
+            }
+            35%{
+                box-shadow: 0px 0px 5px 9px #ffff5e;
+            }
+            50%{
+                box-shadow: 0px 0px 5px 7px #4caf50;
+            }
+            65%{
+                box-shadow: 0px 0px 5px 9px #26ccff;
+            }
+            80%{
+                box-shadow: 0px 0px 5px 6px #3f51b5;
+            }
+            100%{
+                box-shadow: 0px 0px 5px 3px #441794;
+            }
+        }
+
+        .TurnOne{
+            width: 400px;
+            height: 75px;
+            background: #6fd273;
+            font-size: 36px;
+            font-family: Impact;
+            color: Snow;
+            border: 0 solid;
+            border-radius: 15px;
+            margin-left: 100px;
+            text-align: center;
+            line-height: 75px;
+            cursor: pointer
+        }
+
+        .TurnTwo{
+            margin: auto;
+            width: 400px;
+            height: 75px;
+            background: #6fd273;
+            font-size: 36px;
+            font-family: Impact;
+            color: Snow;
+            border: 0 solid;
+            border-radius: 15px;
+            margin-top: -105px;
+            text-align: center;
+            line-height: 75px;
+            cursor: pointer
+        }
+
+        .TurnThree{
+            margin-left: auto;
+            margin-right: 100px;
+            width: 400px;
+            height: 75px;
+            background: #6fd273;
+            font-size: 36px;
+            font-family: Impact;
+            color: Snow;
+            border: 0 solid;
+            border-radius: 15px;
+            margin-top: -75px;
+            text-align: center;
+            line-height: 75px;
+            cursor: pointer
+        }
+
+        .TurnOne:hover,
+        .TurnTwo:hover,
+        .TurnThree:hover{
+            background: #298c2d;
+            transition: 0.3s ease;
+        }
+
+        .ContainerOne.AnimOne > h2{
+            animation: ElementOne 2s ease infinite;
+        }
+
+        .ContainerTwo.AnimTwo > h2{
+            animation: ElementTwo 2s ease infinite;
+        }
+
+        .ContainerThree.AnimThree > h2{
+            animation: ElementThree 2s ease infinite;
+        }
+    </style>
+</head>
+<body>
+<div class="ContainerOne">
+    <h2 class="OneElementOne"></h2>
+    <h2 class="OneElementTwo"></h2>
+    <h2 class="OneElementThree"></h2>
+    <h2 class="OneElementFour"></h2>
+    <h2 class="OneElementFive"></h2>
+    <h2 class="OneElementSix"></h2>
+    <h2 class="OneElementSeven"></h2>
+    <h2 class="OneElementEight"></h2>
+    <h2 class="OneElementNine"></h2>
+</div>
+<div class="ContainerTwo">
+    <h2 class="TwoElementOne"></h2>
+    <h2 class="TwoElementTwo"></h2>
+    <h2 class="TwoElementThree"></h2>
+    <h2 class="TwoElementFour"></h2>
+    <h2 class="TwoElementFive"></h2>
+    <h2 class="TwoElementSix"></h2>
+    <h2 class="TwoElementSeven"></h2>
+</div>
+<div class="ContainerThree">
+    <h2 class="ThreeElementOne"></h2>
+    <h2 class="ThreeElementTwo"></h2>
+    <h2 class="ThreeElementThree"></h2>
+    <h2 class="ThreeElementFour"></h2>
+    <h2 class="ThreeElementFive"></h2>
+    <h2 class="ThreeElementSix"></h2>
+    <h2 class="ThreeElementSeven"></h2>
+</div>
+
+
+<h2 class="TurnOne">ВКЛЮЧИТЬ АНИМАЦИЮ</h2>
+<h2 class="TurnTwo">ВКЛЮЧИТЬ АНИМАЦИЮ</h2>
+<h2 class="TurnThree">ВКЛЮЧИТЬ АНИМАЦИЮ</h2>
+</body>
+<script>
+const AllContainer = document.querySelectorAll('.ContainerOne, .ContainerTwo, .ContainerThree')
+const Turns = document.querySelectorAll('.TurnOne, .TurnTwo, .TurnThree')
+let TurnOne = 'On';
+
+
+Turns[0].addEventListener('click', function() {
+    if (Turns[0].style.backgroundColor === 'red'){
+        TurnOne = 'Off';
+    }else{
+        TurnOne = 'On';
+    }
+
+    if (TurnOne === 'On'){
+        AllContainer[0].classList.add('AnimOne');
+        Turns[0].style.backgroundColor = 'red';
+        Turns[0].textContent = 'ВЫКЛЮЧИТЬ АНИМАЦИЮ';
+    };
+
+    if (TurnOne === 'Off'){
+        AllContainer[0].classList.remove('AnimOne');
+        Turns[0].style.backgroundColor = '#6fd273';
+        Turns[0].textContent = 'ВКЛЮЧИТЬ АНИМАЦИЮ';
+    };
+});
+
+Turns[1].addEventListener('click', function() {
+    if (Turns[1].style.backgroundColor === 'red'){
+        TurnOne = 'Off';
+    }else{
+        TurnOne = 'On';
+    }
+
+    if (TurnOne === 'On'){
+        AllContainer[1].classList.add('AnimTwo');
+        Turns[1].style.backgroundColor = 'red';
+        Turns[1].textContent = 'ВЫКЛЮЧИТЬ АНИМАЦИЮ';
+    };
+
+    if (TurnOne === 'Off'){
+        AllContainer[1].classList.remove('AnimTwo');
+        Turns[1].style.backgroundColor = '#6fd273';
+        Turns[1].textContent = 'ВКЛЮЧИТЬ АНИМАЦИЮ';
+    };
+});
+
+Turns[2].addEventListener('click', function() {
+    if (Turns[2].style.backgroundColor === 'red'){
+        TurnOne = 'Off';
+    }else{
+        TurnOne = 'On';
+    }
+
+    if (TurnOne === 'On'){
+        AllContainer[2].classList.add('AnimThree');
+        Turns[2].style.backgroundColor = 'red';
+        Turns[2].textContent = 'ВЫКЛЮЧИТЬ АНИМАЦИЮ';
+    };
+
+    if (TurnOne === 'Off'){
+        AllContainer[2].classList.remove('AnimThree');
+        Turns[2].style.backgroundColor = '#6fd273';
+        Turns[2].textContent = 'ВКЛЮЧИТЬ АНИМАЦИЮ';
+    };
+});
+</script>
+</html>
